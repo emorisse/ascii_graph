@@ -12,9 +12,9 @@ for line in fileinput.input():
 lines = [[" " for i in range(len(items))] for x in range(20)]
 #print(lines)
 
-
+# assumes all numbers are positive
 for k,i in enumerate(items):
-    I = int(i/max(items) * 20) -1
+    I = int(round(i/max(items) * 19,0))
     #print("{},{},{}".format(k,i,I))
     #print(lines[I][k])
     lines[I][k] = "*"
