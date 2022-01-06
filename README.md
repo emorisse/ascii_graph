@@ -5,25 +5,25 @@ basic plotting in python with ascii output for use in command line etc with mini
 ```
 $ python ascii_graph.py input.csv 
 16.0	           *
-8.0	            
-5.3	            
-4.0	            
+15.2	            
+14.4	            
+13.6	            
+12.8	            
+12.0	            
+11.2	            
+10.4	            
+9.6	            
+8.8	        *   
+8.0	       * *  
+7.2	            
+6.4	      *   * 
+5.6	     *      
+4.8	    *       
+4.0	   *        
 3.2	            
-2.7	            
-2.3	            
-2.0	            
-1.8	            
-1.6	        *   
-1.5	       * *  
-1.3	            
-1.2	      *   * 
-1.1	     *      
-1.1	    *       
-1.0	   *        
-0.9	            
-0.9	  *         
-0.8	 *          
-0.8	*
+2.4	  *         
+1.6	 *          
+0.8	*           
 ```
 
 # ideas on how you can help

@@ -22,5 +22,5 @@ for k,i in enumerate(items):
 
 lines.reverse()
 for i,line in enumerate(lines):
-    i = round(max(items)/(i+1),1)
+    i = max(items)/20*(20-i)
     print("{}\t{}".format(i,"".join(line)))
