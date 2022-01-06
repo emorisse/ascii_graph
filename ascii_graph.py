@@ -21,6 +21,7 @@ for k,i in enumerate(items):
     #print(lines[I][k])
 
 lines.reverse()
+size=len(str(max(items)/20*(20-i)))
 for i,line in enumerate(lines):
     i = max(items)/20*(20-i)
-    print("{}\t{}".format(i,"".join(line)))
+    print("{:10.4f}\t{}".format(i,"".join(line)))
