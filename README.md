@@ -29,3 +29,4 @@ $ python ascii_graph.py input.csv
 # ideas on how you can help
 * Take a look at my bounds checking, I'm often off by 1 in indicie assignment.
 * I don't bucket horizontally, so if you have more inputs than your terminal width, this is going to be ugly
+* How to format the vertical axis labels. Eg, if there's a wide spread in digits in the labels, eg 0 vs 1,000,000, rounding and spacing between the labels and the \* won't line up the same
