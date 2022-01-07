@@ -7,7 +7,7 @@ for line in fileinput.input():
 # assume 80 x 24 terminal
 # let's use 20 lines for display
 
-lines = [[" " for i in range(len(items))] for x in range(20)]
+lines = [["." for i in range(len(items))] for x in range(20)]
 
 M = max(items)
 m = min(items)
