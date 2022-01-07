@@ -61,9 +61,16 @@ dot = len('{:.100f}'.format(size - int(size)))
 #dot = len(str(size - int(size))) - 3 # remove for initial "0."
 size = len(str(size)) + 1
 
-format_str = "{" + ":{}.{}f".format(size,dot) + "}\t{}"
-format_str = "{:.3e}\t{}"
-format_str = "{:>.10f}\t{}"
+#format_str = "{" + ":{}.{}f".format(size,dot) + "}\t{}"
+#format_str = "{:.3e}\t{}"
+if (diff>100):
+    format_str = "{:>10.1f}\t{}"
+elif (diff>10):
+    format_str = "{:>10.2f}\t{}"
+elif (diff>1):
+    format_str = "{:>10.3f}\t{}"
+else:
+    format_str = "{:>10.10f}\t{}"
 #print(format_str)
 bins = [ M-x*diff/19 for x in range(0,20) ]
 #bins.reverse()
