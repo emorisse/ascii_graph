@@ -18,11 +18,11 @@ def remap( x, oMin=m, oMax=M, nMin=0, nMax=19):
 
     #range check
     if oMin == oMax:
-        print "Warning: Zero input range"
+        print("Warning: Zero input range")
         return None
 
     if nMin == nMax:
-        print "Warning: Zero output range"
+        print("Warning: Zero output range")
         return None
 
     #check reversed input range
@@ -55,7 +55,18 @@ for k,i in enumerate(items):
     lines[I][k] = "*"
 
 lines.reverse()
-size=len(str(max(items)/20*(20-i)))
-for i,line in enumerate(lines):
-    i = M - i * diff/20
-    print("{:10.4f}\t{}".format(i,"".join(line)))
+size = m - 19 * diff/20
+#dot = str(size - int(size))
+dot = len('{:.100f}'.format(size - int(size)))
+#dot = len(str(size - int(size))) - 3 # remove for initial "0."
+size = len(str(size)) + 1
+
+format_str = "{" + ":{}.{}f".format(size,dot) + "}\t{}"
+format_str = "{:.3e}\t{}"
+format_str = "{:>.10f}\t{}"
+#print(format_str)
+bins = [ M-x*diff/19 for x in range(0,20) ]
+#bins.reverse()
+#print(bins)
+for i,line in zip(bins,lines):
+    print(format_str.format(i,"".join(line)))
