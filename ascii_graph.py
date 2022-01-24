@@ -17,7 +17,12 @@ import fileinput
 
 items = []
 for line in fileinput.input():
-    items.append(float(line.strip()))
+    try:
+        line = float(line.strip())
+    except:
+        line = float("nan")
+
+    items.append(line)
 
 # assume 80 x 24 terminal
 # let's use 20 lines for display
@@ -65,9 +70,13 @@ def remap( x, oMin=m, oMax=M, nMin=0, nMax=19):
     return result
 
 for k,i in enumerate(items):
-    I = int(remap(i))
-    #print("{},{},{}".format(k,i,I))
-    lines[I][k] = "*"
+    # use try to catch NaN for empty inputs
+    try:
+        I = int(remap(i))
+        #print("{},{},{}".format(k,i,I))
+        lines[I][k] = "*"
+    except:
+        continue
 
 lines.reverse()
 size = m - 19 * diff/20
